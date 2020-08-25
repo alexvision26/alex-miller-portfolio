@@ -8,8 +8,8 @@ function Hero() {
         <div className='hero-banner'>
             <div className='overlay'>
                 <div className='hero-content'>
-                    <h1 className='title'>Alex Miller</h1>
-                    <h2 className='subtitle'>Full Stack Software Developer</h2>
+                    <h1 className='title'>Hi, I'm <span className='name'>Alex Miller.</span></h1>
+                    <h2 className='subtitle'>Nice to meet you.</h2>
                 </div>
             </div>
         </div>
