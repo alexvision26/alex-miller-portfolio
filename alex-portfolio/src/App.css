@@ -122,7 +122,7 @@ h2, h3{
 
 .nav-content {
   display: flex;
-  padding: 1% 0;
+  padding: .3% 0;
   width: 85%;
   justify-content: center;
   margin: 0 auto;
@@ -261,8 +261,45 @@ a {
   background-color: #6bc260;
 }
 
+.contact-modal {
+  width: 100%;
+  height: 100%;
+  color:black;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 6%;
+  position: relative;
+}
+
+.close {
+  transform: rotate(45deg);
+  position: absolute;
+  font-size: 2.9rem;
+  top: 3px;
+  right: 14px;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  width: 45%;
+  margin: 1% auto;
+}
+
 .contact-sec {
-  background-color: rgba(62, 104, 184, 0.767);
+  background-color: #345f8a;
   /* background-color: rgba(110, 86, 218, 0.658); */
   margin: 0 auto;
   width: 100%;
@@ -274,10 +311,12 @@ a {
 .contact-sec h2 {
   font-size: 4.5rem;
   color: white;
+  padding-bottom: 1%;
 }
 
 .cta-button {
-  background-color: #4dbd3f; /* Green */
+  background-color: #4dbd3f;
+  /* background-color: #33875d; */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -332,4 +371,25 @@ a {
 .contact-form input {
   width: 20%;
   height: 100px;
+}
+
+.return {
+  position: fixed;
+  font-size: 6rem;
+  font-weight: 700;
+  border-radius: 50%;
+  bottom: 5%;
+  right: 3%;
+  width: 3%;
+  height: 6%;
+  background-color:#494949;
+  /* border: 2px solid rgb(71, 71, 71); */
+  color: white;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.return.hidden {
+  opacity: 0;
 }

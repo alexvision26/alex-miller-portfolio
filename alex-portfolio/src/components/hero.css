@@ -10,8 +10,30 @@
 }
 
 .name {
-    color: rgb(49, 78, 133);
+    /* color: rgb(49, 78, 133); */
+    color: #345f8a;
 }
+
+.intro-button {
+    margin: 1%;
+    padding: .7%;
+    width: 7%;
+    background-color: white;
+    color: #345f8a;
+    border: 4px solid #345f8a;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: ease-in-out .1s;
+}
+
+.intro-button:hover {
+    background-color: #345f8a;
+    color: white;
+}
+
 
 .overlay {
     width: 100%;

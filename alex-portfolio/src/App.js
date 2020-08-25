@@ -42,8 +42,9 @@ function useOnScreen(options) {
 function App() {
   const [projects, setProjects] = useState([])
   const [loaded, setLoaded] = useState(false)
+  const [isModal, setIsModal] = useState(false)
 
-  const [ref, visible] = useOnScreen({threshold: '.2'})
+  const [ref, visible] = useOnScreen({rootMargin: '50px'})
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/projects').then(res => {
@@ -63,8 +64,16 @@ function App() {
     window.open(link, '_blank')
   }
 
+  const handleModal = () => {
+    setIsModal(!isModal)
+  }
+
   const navState = visible ? "navbar hidden" : "navbar";
   const pageState = loaded ? "App" : "App hidden";
+  const returnArrow = visible ? "none" : "block";
+
+  var showModal = isModal ? "flex" : "none";
+
 
   return (
     <div className={pageState}>
@@ -81,18 +90,14 @@ function App() {
               <div className='links'>
                     <a href='#'>Home</a>
                     <a href='#projects'>Portfolio</a>
-                    <a href='#'>Contact</a>
+                    <a onClick={handleModal}>Contact</a>
               </div>
             </div>
         </header>
-
-        <div className='contact-modal'>
-          
-        </div>
         
 
         <div ref={ref}>
-          <Hero/>
+          <Hero handleModal={handleModal}/>
         </div>
 
       <h2 id='projects' className='proj-sec'>Projects</h2>
@@ -117,16 +122,35 @@ function App() {
           </div>
           <div className='contact-sec'>
             <h2>Ready to work?</h2>
-            <button className='cta-button'>Let's talk!</button>
+            <button className='cta-button' onClick={handleModal}>Let's talk!</button>
           </div>
 
           <div className='footer-sec'>
             <h3>Alex Miller | Full Stack Software Developer | 2020</h3>
             <a href="#">> Home</a>
-            <a href="#">> Portfolio</a>
-            <a href="#">> Contact</a>
+            <a href="#projects">> Portfolio</a>
+            <a onClick={handleModal}>> Contact</a>
           </div>
       </div>
+
+      <div className='contact-modal' style={{display: showModal}}>
+          <div className="modal-content">
+            <div className='close' onClick={handleModal}>+</div>
+            <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
+
+            <form action="">
+              <input type='text' placeholder="Email"/>
+              <input type='text' placeholder="Subject"/>
+              <input type='textarea' placeholder="Message"/>
+              <a href="" className="cta-button">Submit</a>
+            </form>
+          </div>
+        </div>
+
+        <a href="#" className={visible ? "return hidden" : "return"}>
+          <p>^</p>
+        </a>
+
       </div>
   );
 }
