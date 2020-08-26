@@ -134,16 +134,28 @@ function App() {
       </div>
 
       <div className='contact-modal' style={{display: showModal}}>
+        <h1>Contact Alex Miller</h1>
           <div className="modal-content">
             <div className='close' onClick={handleModal}>+</div>
-            <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
+            <div className="form-content">
+              <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
 
-            <form action="">
-              <input type='text' placeholder="Email"/>
-              <input type='text' placeholder="Subject"/>
-              <input type='textarea' placeholder="Message"/>
-              <a href="" className="cta-button">Submit</a>
-            </form>
+              <form className='ct-form' action="">
+                <label>Email</label>
+                <input type='text'/>
+                <label>Subject</label>
+                <input type='text'/>
+                <label>Message</label>
+                <textarea cols="50" rows="5" />
+                <div className='form-buttons'>
+                  <a href="" className="modal-send">Submit</a>
+                  <a href="" onClick={(e) => {
+                    e.preventDefault();
+                    handleModal()
+                    }} className="modal-cancel">Cancel</a>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
