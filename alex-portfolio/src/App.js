@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 import Hero from './components/hero';
+import Skills from './components/skills';
 import Contact from './components/contact';
 import { Helmet } from 'react-helmet';
 
@@ -68,6 +69,13 @@ function App() {
     setIsModal(!isModal)
   }
 
+  function jump(e) {
+    var url = document.location.href;               //Save down the URL without hash.
+    document.location.href = "#"+e;                 //Go to the target element.
+    document.history.replaceState(null,null,url);
+    // console.log(e)
+  }
+
   const navState = visible ? "navbar hidden" : "navbar";
   const pageState = loaded ? "App" : "App hidden";
   const returnArrow = visible ? "none" : "block";
@@ -97,7 +105,11 @@ function App() {
         
 
         <div ref={ref}>
-          <Hero handleModal={handleModal}/>
+          <Hero handleModal={handleModal} jump={jump}/>
+        </div>
+
+        <div id="skills">
+          <Skills/>
         </div>
 
       <h2 id='projects' className='proj-sec'>Projects</h2>
@@ -160,7 +172,7 @@ function App() {
         </div>
 
         <a href="#" className={visible ? "return hidden" : "return"}>
-          <p>^</p>
+          <img src="https://image.flaticon.com/icons/svg/992/992703.svg"/>
         </a>
 
       </div>

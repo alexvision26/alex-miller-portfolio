@@ -116,6 +116,7 @@ h2, h3{
   transition: all .5s;
   opacity: 1;
   width: 100%;
+  z-index: 5;
   background-color: rgb(60, 60, 63);
   position: fixed;
 }
@@ -387,6 +388,7 @@ label {
 .close {
   transform: rotate(45deg);
   position: absolute;
+  color: white;
   font-size: 2.9rem;
   top: 3px;
   right: 14px;
@@ -421,6 +423,7 @@ textarea {
   background-color: rgb(132, 133, 136);
   border: 1px solid white;
   outline: none;
+  resize: none;
 }
 
 .contact-sec {
@@ -507,9 +510,10 @@ textarea {
   right: 3%;
   width: 3%;
   height: 6%;
-  background-color:#494949;
+  /* background-color:#494949; */
   /* border: 2px solid rgb(71, 71, 71); */
   color: white;
+  filter: invert(100%);
   z-index: 1;
   opacity: 1;
   transition: opacity 1s;

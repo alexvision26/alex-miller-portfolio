@@ -14,6 +14,11 @@
     color: #345f8a;
 }
 
+.overlay img {
+    width: 5%;
+    /* padding-bottom: 5%; */
+}
+
 .intro-button {
     margin: 1%;
     padding: .7%;
@@ -58,4 +63,42 @@
 .subtitle {
     font-size: 3.5rem;
     /* border: 1px solid red; */
+}
+
+#more-arrows {
+	width: 75px;
+  height: 65px;
+  
+  &:hover {
+    
+    polygon {
+      fill: rgb(0, 0, 0);
+      transition: all .2s ease-out;
+
+      &.arrow-bottom {
+        transform: translateY(-18px);
+      }
+
+      &.arrow-top {
+        transform: translateY(18px);
+      }
+      
+    }
+  
+  }
+  
+}
+
+polygon {
+  fill: #000;
+  transition: all .2s ease-out;
+    
+  &.arrow-middle {
+	  opacity: 0.75;
+	}
+
+	&.arrow-top {
+	  opacity: 0.5
+	}
+	 
 }
