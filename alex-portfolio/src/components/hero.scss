@@ -1,0 +1,104 @@
+
+.hero-banner {
+    height: 100vh;
+    /* background-image: url('https://gdurl.com/40M8'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    /* margin: auto; */
+}
+
+.name {
+    /* color: rgb(49, 78, 133); */
+    color: #345f8a;
+}
+
+.overlay img {
+    width: 5%;
+    /* padding-bottom: 5%; */
+}
+
+.intro-button {
+    margin: 1%;
+    padding: .7%;
+    width: 7%;
+    background-color: white;
+    color: #345f8a;
+    border: 4px solid #345f8a;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: ease-in-out .1s;
+}
+
+.intro-button:hover {
+    background-color: #345f8a;
+    color: white;
+}
+
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    color: black;
+    /* background-color: red; */
+    font-size: 7.5rem;
+    /* background-color: lightgrey; */
+    /* font-family: 'IBM Plex Serif', serif; */
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.subtitle {
+    font-size: 3.5rem;
+    /* border: 1px solid red; */
+}
+
+#more-arrows {
+	width: 75px;
+  height: 65px;
+  
+  &:hover {
+    
+    polygon {
+      fill: rgb(0, 0, 0);
+      transition: all .2s ease-out;
+
+      &.arrow-bottom {
+        transform: translateY(-18px);
+      }
+
+      &.arrow-top {
+        transform: translateY(18px);
+      }
+      
+    }
+  
+  }
+  
+}
+
+polygon {
+  fill: #000;
+  transition: all .2s ease-out;
+    
+  &.arrow-middle {
+	  opacity: 0.75;
+	}
+
+	&.arrow-top {
+	  opacity: 0.5
+	}
+	 
+}
