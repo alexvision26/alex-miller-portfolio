@@ -2,16 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
-
 import Hero from './components/hero';
 import Skills from './components/skills';
-import Contact from './components/contact';
+// import About from './components/About';
+import Services from './components/Services';
 import { Helmet } from 'react-helmet';
 
 function useOnScreen(options) {
@@ -98,6 +92,7 @@ function App() {
               <div className='links'>
                     <a href='#'>Home</a>
                     <a href='#projects'>Portfolio</a>
+                    <a href='#about'>About</a>
                     <a onClick={handleModal}>Contact</a>
               </div>
             </div>
@@ -111,8 +106,12 @@ function App() {
         <div id="skills">
           <Skills/>
         </div>
+ 
+        <div id='services'>
+          <Services/>
+        </div>
 
-      <h2 id='projects' className='proj-sec'>Projects</h2>
+      <h2 id='projects' className='proj-sec'>Recent Projects</h2>
         <div className='container'>
 
         {projects.map(e => {
@@ -124,7 +123,7 @@ function App() {
               <p>{e.desc}</p>
               <div className='proj-buttons'>
                 <button onClick={() => viewPage(e.deploy)}>View App</button>
-                <button onClick={() => viewPage(e.repo)}>View Code</button>
+                {e.repo ? <button onClick={() => viewPage(e.repo)}>View Code</button> : <></>}
               </div>
             </div>
           </div>
@@ -153,7 +152,8 @@ function App() {
               <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
 
               <form className='ct-form' action="">
-                <label>Email</label>
+                <label>To Alex Miller:</label><br/>
+                <label>Your Email Address</label>
                 <input type='text'/>
                 <label>Subject</label>
                 <input type='text'/>

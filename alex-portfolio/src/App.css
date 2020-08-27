@@ -4,7 +4,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Judson&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap");
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -91,7 +91,7 @@ html {
 }
 
 p {
-  font-family: 'Judson', serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h2, h3{
@@ -159,7 +159,7 @@ h2, h3{
 
 .links a:hover {
   color: #4dbd3f;
-
+  cursor: pointer;
 }
 
 .container {
@@ -178,10 +178,12 @@ a {
 .proj-sec {
   font-size: 4rem;
   color: white;
-  background-color: rgba(63, 63, 63, 0.658);
+  /* background-color: white; */
+  /* background-image: url("https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  /* background-color: #345f8a; */
   margin: 0 auto;
   width: 100%;
-  padding: 2% 0;
+  padding: 2% 0 0 0;
 }
 
 .port-item {
@@ -260,6 +262,7 @@ a {
 
 .proj-buttons button:hover{
   background-color: #6bc260;
+  cursor: pointer;
 }
 
 .contact-modal {
@@ -307,8 +310,8 @@ a {
 }
 
 .modal-content {
-  width: 550px;
-  height: 350px;
+  width: 600px;
+  height: 420px;
   background-color: rgb(132, 133, 136);
   /* border-radius: 8px; */
   /* border: 1px solid white; */
@@ -379,10 +382,12 @@ label {
 
 .modal-cancel:hover {
   background-color: #abafab;
+  cursor: pointer;
 }
 
 .modal-send:hover {
   background-color: #76b96d;
+  cursor: pointer;
 }
 
 .close {
@@ -457,6 +462,7 @@ textarea {
 
 .cta-button:hover {
   background-color: #7ac071;
+  cursor: pointer;
 }
 
 .footer-sec {
@@ -488,6 +494,7 @@ textarea {
 
 .footer-sec a:hover {
   color: #4dbd3f;
+  cursor: pointer;
 }
 
 .contact-form {
