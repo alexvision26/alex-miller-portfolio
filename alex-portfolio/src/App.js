@@ -4,8 +4,6 @@ import axios from 'axios';
 
 import Hero from './components/hero';
 import Skills from './components/skills';
-// import About from './components/About';
-import Services from './components/Services';
 import { Helmet } from 'react-helmet';
 
 function useOnScreen(options) {
@@ -79,7 +77,6 @@ function App() {
     })
 
     setTimeout("alert('Message sent successfully!');", 1);
-    // window.status = "Message sent succesfully!";
 
     const { email, subject, message } = contactInfo
     
@@ -143,10 +140,6 @@ function App() {
         <div id="skills">
           <Skills/>
         </div>
- 
-        {/* <div id='services'>
-          <Services/>
-        </div> */}
 
       <h2 id='projects' className='proj-sec'>Recent Projects</h2>
         <div className='container'>
