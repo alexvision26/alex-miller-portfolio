@@ -5,8 +5,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 function Hero(props) {
 
-    console.log(props)
-
     return(
         <>
         <div className='hero-banner'>

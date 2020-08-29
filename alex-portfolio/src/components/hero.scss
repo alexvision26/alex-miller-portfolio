@@ -1,22 +1,18 @@
 
 .hero-banner {
     height: 100vh;
-    /* background-image: url('https://gdurl.com/40M8'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-    /* margin: auto; */
 }
 
 .name {
-    /* color: rgb(49, 78, 133); */
     color: #345f8a;
 }
 
 .overlay img {
     width: 5%;
-    /* padding-bottom: 5%; */
 }
 
 .intro-button {
@@ -32,11 +28,20 @@
     display: inline-block;
     font-size: 16px;
     transition: ease-in-out .1s;
-}
 
-.intro-button:hover {
-    background-color: #345f8a;
-    color: white;
+    &:hover {
+      background-color: #345f8a;
+      color: white;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 15%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+    width: 30%;
+  }
 }
 
 
@@ -53,16 +58,22 @@
     height: 90%;
     justify-content: center;
     color: black;
-    /* background-color: red; */
     font-size: 7.5rem;
-    /* background-color: lightgrey; */
-    /* font-family: 'IBM Plex Serif', serif; */
     font-family: 'Archivo Black', sans-serif;
+
+    @media only screen and (max-width: 900px) {
+      margin: 0 auto;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 5rem;
+      width: 90%;
+    }
 }
 
 .subtitle {
     font-size: 3.5rem;
-    /* border: 1px solid red; */
 }
 
 #more-arrows {

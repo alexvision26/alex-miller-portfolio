@@ -60,32 +60,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* .loader {
-  height: 100vh;
-  position: fixed;
-  background-color: white;
-  z-index: 1;
-} */
-
 .App {
-  /* position: fixed; */
-  /* display: none; */
   width: 100%;
   height: 100%;
-  /* background-color: red; */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: rgba(0, 0, 0, 0.795); */
   z-index: 2;
-  /* cursor: pointer; */
   opacity: 1;
   transition: ease-in-out .7s;
 }
 
 .App.hidden {
-  /* display: none; */
   transition: ease-in-out .7s;
   opacity: 0;
 }
@@ -98,13 +85,8 @@ h2, h3{
   font-family: 'Judson', serif;
 }
 
-/* header {
-  visibility: hidden;
-} */
-
 .hero {
   background-color: rgb(46, 46, 46);
-  /* min-height: 100vh; */
 }
 
 .navbar.hidden {
@@ -127,20 +109,45 @@ h2, h3{
   width: 85%;
   justify-content: center;
   margin: 0 auto;
+
+  @media only screen and (max-width: 1300px) {
+    padding: .8% 0;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: 95%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .logo {
   color: white;
-  /* border: 2px solid red; */
+  display:flex;
+  flex-direction: row;
   width: 40%;
   margin: auto;
   font-style: italic;
   font-size: 4rem;
   font-family: 'Archivo Black', sans-serif;
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 3.7rem;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 2.8rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.4rem;
+    width: 70%;
+  }
 }
 
 .links {
-  /* margin: 1%; */
   display: flex;
   width:80%;
   flex-direction: row;
@@ -148,19 +155,101 @@ h2, h3{
   font-family: 'IBM Plex Serif', serif;
   font-size: 1.7rem;
   font-weight: 100;
-  /* border: 2px solid red; */
+
+  a {
+    margin: 2%;
+    padding-right: 2%;
+    transition: ease-in-out .2s;
+
+    &:hover {
+      color: #4dbd3f;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 1300px) {
+    width: 60%;
+    font-size: 1.5rem;
+    padding-top: .7%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.3rem;
+    width: 55%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 40%;
+    font-size: 1.3rem;
+    margin: 1% auto;
+
+    a {
+      margin: 7% auto;
+      padding-bottom: 5%;
+    }
+  }
 }
 
-.links a {
-  margin: 2%;
-  padding-right: 2%;
-  transition: ease-in-out .2s;
+#toggle {
+  display: none;
 }
 
-.links a:hover {
-  color: #4dbd3f;
-  cursor: pointer;
+.hamburger {
+  display: none;
 }
+
+// HAMBURGER MENU STYLES
+@media only screen and (max-width: 750px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .links {
+    width: 100%;
+    margin: 2% auto 0;
+    flex-direction: column;
+    padding: 0;
+    display:none;
+    transition: opacity 1s;
+    
+    a {
+      width: 100%;
+      margin: 0 auto;
+      padding: 5% 0;
+      border-top: 1px solid black;
+    }
+  }
+
+  #toggle:checked + .links {
+    display:flex;
+  }
+
+  .logo {
+    width: 90%;
+    padding: 2% 0;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top: 17px;
+    font-size: 1.7rem;
+    font-style: normal;
+  }
+}
+
 
 .container {
   width: 85%;
@@ -168,6 +257,10 @@ h2, h3{
   display: flex;
   flex-flow: column;
   padding: 2% 0;
+
+  @media only screen and (max-width: 1050px) {
+    width: 90%;
+  }
 }
 
 a {
@@ -178,12 +271,9 @@ a {
 .proj-sec {
   font-size: 4rem;
   color: white;
-  /* background-color: white; */
-  /* background-image: url("https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
-  /* background-color: #345f8a; */
   margin: 0 auto;
   width: 100%;
-  padding: 2% 0 0 0;
+  padding: 3% 0 0 0;
 }
 
 .port-item {
@@ -194,15 +284,33 @@ a {
   margin: 1% auto;
   padding: 2%;
   height: 50%;
-  /* background-color: rgb(199, 199, 199); */
-  /* border: 1px solid black; */
-}
 
-.port-item img {
-  width: 40%;
-  height: 25%;
-  border: 20px solid lightgray;
-  border-style: double;
+  img {
+    width: 40%;
+    height: 25%;
+    border: 20px solid lightgray;
+    border-style: double;
+  }
+  
+  @media only screen and (max-width: 1300px) {
+    width: 70%;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 85%;
+    height: 60%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+
+    margin: 4% auto;
+
+    img {
+      margin: 0 auto;
+      width: 70%;
+    }
+  }
 }
 
 .port-desc {
@@ -214,50 +322,70 @@ a {
   color: white;
   height: 100%;
   width: 100%;
-  /* border: 1px solid red; */
+
+  h3 {
+    font-size: 2.7rem;
+    font-weight: 300;
+    padding: 2% 0;
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+    width: 80%;
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    margin: 1% auto;
+    h3 {
+      text-align: center;
+      font-size: 2.4rem;
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.2;
+      width: 100%;
+    }
+  }
 }
 
-.port-desc h3 {
-  /* text-transform: uppercase; */
-  font-size: 3rem;
-  font-weight: 300;
-  padding: 2% 0;
-  text-align: left;
-  /* height: 100%; */
-}
-
-.port-desc p {
-  text-align: left;
-  width: 80%;
-  font-size: 1.4rem;
-}
 
 .proj-buttons {
+  font-size: 1.2rem;
+  width: 80%;
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start; */
-  /* justify-self: flex-end; */
-  /* align-items: baseline; */
-  text-align: left;
-  padding-top: 20%;
-  /* height: 100%; */
-  /* border: 1px solid red; */
+  justify-content: flex-start;
+  padding-top: 8%;
+
+  @media only screen and (max-width: 600px) {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
 }
 
 .proj-buttons button {
-  margin-right: 2%;
-  width: 15%;
+  margin-right: 5%;
+  width: 35%;
   height: 30%;
   background-color: #4dbd3f;
   border: none;
   color: white;
   padding: 2%;
   transition: ease-in-out .16s;
-  /* padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px; */
+
+  @media only screen and (max-width: 1500px) {
+    width: 25%;
+    padding: 3.5%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
 }
 
 .proj-buttons button:hover{
@@ -288,8 +416,6 @@ a {
 .form-content {
   display: flex;
   justify-content: space-between;
-  /* margin: 1%; */
-  /* border: 1px solid red; */
   width: 100%;
 }
 
@@ -306,26 +432,47 @@ a {
 
 .ct-form {
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 .modal-content {
-  width: 600px;
-  height: 420px;
+  width: 30%;
+  height: 35%;
   background-color: rgb(132, 133, 136);
-  /* border-radius: 8px; */
-  /* border: 1px solid white; */
   text-align: left;
   padding: 3%;
   padding-bottom: 6%;
   position: relative;
   box-shadow: 5px 1px 30px #00000052;
-  /* margin: 0 auto; */
+  
+  
+  @media only screen and (max-width: 1600px) {
+    width: 35%;
+    height: 35%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 50%;
+    height: 40%;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 60%;
+    height: 40%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 80%;
+    height: 40%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+    height: 40%;
+  }
 }
 
 .modal-send {
   background-color: #3eb12f;
-  /* background-color: #33875d; */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -335,10 +482,8 @@ a {
   display: inline-block;
   font-size: 16px;
   transition: ease-in-out .16s;
-  /* position: absolute; */
   bottom: 0;
   right: 0;
-  /* width: 100%; */
 }
 
 .form-buttons {
@@ -356,7 +501,6 @@ a {
 
 .modal-cancel {
   background-color: #989e98;
-  /* background-color: #33875d; */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -365,19 +509,15 @@ a {
   display: inline-block;
   font-size: 16px;
   transition: ease-in-out .16s;
-  /* position: absolute; */
   bottom: 0;
   left: 0;
-  /* width: 40%; */
   border: 1px solid white;
-  /* border-radius: 8px; */
 }
 
 label {
   text-align: left;
   color: white;
   font-size: 1.25rem;
-  /* margin-bottom: 5%; */
 }
 
 .modal-cancel:hover {
@@ -400,7 +540,8 @@ label {
   cursor: pointer;
 }
 
-input {
+
+.contact-box {
   display: block;
   width: 100%;
   height: 13%;
@@ -432,24 +573,40 @@ textarea {
 }
 
 .contact-sec {
-  background-color: #345f8a;
-  /* background-color: rgba(110, 86, 218, 0.658); */
+  background-color: #375169;
   margin: 0 auto;
   width: 100%;
   padding: 3% 0;
   color: white;
   font-size: 2rem;
+
+  h2 {
+    font-size: 4.5rem;
+    color: white;
+    padding-bottom: 1%;
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    padding: 7% 0;
+
+    h2 {
+      width: 80%;
+      padding-bottom: 4%;
+      margin: 0 auto;
+      font-size: 3.3rem;
+    }
+
+    button {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
 }
 
-.contact-sec h2 {
-  font-size: 4.5rem;
-  color: white;
-  padding-bottom: 1%;
-}
 
 .cta-button {
   background-color: #4dbd3f;
-  /* background-color: #33875d; */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -468,33 +625,44 @@ textarea {
 .footer-sec {
   color: rgb(197, 196, 196);
   background-color: rgba(46, 46, 46, 0.658);
-  /* margin: 0 auto; */
   width: 100%;
   padding: 3.5% 0 2% 0;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
-}
 
-.footer-sec h3 {
-  text-align: left;
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 1.5%;
-}
+  h3 {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1.5%;
+  }
 
-.footer-sec a {
-  color: rgb(197, 196, 196);
-  padding-bottom: 1%;
-  text-align: left;
-  width: 80%;
-  margin: 0 auto;
-  transition: ease-in-out .2s;
-}
+  a {
+    color: rgb(197, 196, 196);
+    padding-bottom: 1%;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+    transition: ease-in-out .2s;
 
-.footer-sec a:hover {
-  color: #4dbd3f;
-  cursor: pointer;
+    &:hover {
+      color: #4dbd3f;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    h3 {
+      text-align: center;
+      margin: 2% auto 4%;
+    }
+
+    a {
+      padding-bottom: 5%;
+    }
+  }
+
 }
 
 .contact-form {
@@ -510,20 +678,34 @@ textarea {
 
 .return {
   position: fixed;
-  font-size: 6rem;
   font-weight: 700;
-  border-radius: 50%;
   bottom: 5%;
   right: 3%;
   width: 3%;
   height: 6%;
-  /* background-color:#494949; */
-  /* border: 2px solid rgb(71, 71, 71); */
   color: white;
   filter: invert(100%);
   z-index: 1;
   opacity: 1;
   transition: opacity 1s;
+
+  @media only screen and (max-width: 1800px) {
+    width: 5%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 7%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 8%;
+    bottom: 3.5%;
+    right: 4%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .return.hidden {

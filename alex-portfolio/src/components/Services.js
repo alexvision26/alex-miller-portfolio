@@ -5,7 +5,6 @@ function Services() {
 
     return (
         <div className="service-sec">
-            {/* <h1>Services</h1> */}
             <div className="service-box">
                 
                 <div className="s-box">
@@ -38,16 +37,6 @@ function Services() {
                     </ul>
                 </div>
 
-                {/* <div className="s-box">
-                    <img src="https://image.flaticon.com/icons/svg/3419/3419975.svg" alt=""/>
-                    <h3>Design</h3>
-                    <hr/>
-                    <ul>
-                        <li>Photoshop</li>
-                        <li>Figma</li>
-                        <li>Responsive & Accessible Design</li>
-                    </ul>
-                </div> */}
             </div>
 
         </div>
