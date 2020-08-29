@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
 
 import Hero from './components/hero';
@@ -39,11 +39,16 @@ function App() {
   const [loaded, setLoaded] = useState(false)
   const [isModal, setIsModal] = useState(false)
 
+  const [contactInfo, setContactInfo] = useState({
+    email: "",
+    subject: "",
+    message: ""
+  })
+
   const [ref, visible] = useOnScreen({rootMargin: '50px'})
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/projects').then(res => {
-      console.log(res)
       setProjects(res.data)
     }).catch(err => {
       console.log(err)
@@ -54,6 +59,38 @@ function App() {
     }, 600);
 
   }, [])
+
+  const handleContact = (e) => {
+    setContactInfo({
+      ...contactInfo,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    handleModal();
+
+    setContactInfo({
+      email: "",
+      subject: "",
+      message: ""
+    })
+
+    setTimeout("alert('Message sent successfully!');", 1);
+    // window.status = "Message sent succesfully!";
+
+    const { email, subject, message } = contactInfo
+    
+    const form = await axios.post('http://localhost:5000/api/contact', {
+      email,
+      subject,
+      message
+    })
+
+    
+  }
 
   const viewPage = (link) => {
     window.open(link, '_blank')
@@ -67,7 +104,6 @@ function App() {
     var url = document.location.href;               //Save down the URL without hash.
     document.location.href = "#"+e;                 //Go to the target element.
     document.history.replaceState(null,null,url);
-    // console.log(e)
   }
 
   const navState = visible ? "navbar hidden" : "navbar";
@@ -88,7 +124,8 @@ function App() {
               <div className='logo'>
                 <h2>Made By Alex</h2>
               </div>
-              
+              <label className="hamburger" htmlFor="toggle">&#9776;</label>
+                <input type="checkbox" id="toggle"></input>
               <div className='links'>
                     <a href='#'>Home</a>
                     <a href='#projects'>Portfolio</a>
@@ -107,9 +144,9 @@ function App() {
           <Skills/>
         </div>
  
-        <div id='services'>
+        {/* <div id='services'>
           <Services/>
-        </div>
+        </div> */}
 
       <h2 id='projects' className='proj-sec'>Recent Projects</h2>
         <div className='container'>
@@ -122,8 +159,8 @@ function App() {
               <h3>{e.proj_name}</h3>
               <p>{e.desc}</p>
               <div className='proj-buttons'>
-                <button onClick={() => viewPage(e.deploy)}>View App</button>
-                {e.repo ? <button onClick={() => viewPage(e.repo)}>View Code</button> : <></>}
+                <button onClick={() => viewPage(e.deploy)}>App</button>
+                {e.repo ? <button onClick={() => viewPage(e.repo)}>Code</button> : <></>}
               </div>
             </div>
           </div>
@@ -151,16 +188,16 @@ function App() {
             <div className="form-content">
               <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
 
-              <form className='ct-form' action="">
+              <form className='ct-form' action="" method="">
                 <label>To Alex Miller:</label><br/>
                 <label>Your Email Address</label>
-                <input type='text'/>
+                <input className="contact-box" name="email" type="email" value={contactInfo.email} onChange={handleContact} required/>
                 <label>Subject</label>
-                <input type='text'/>
+                <input className="contact-box" type='text' name="subject" value={contactInfo.subject} onChange={handleContact} required/>
                 <label>Message</label>
-                <textarea cols="50" rows="5" />
+                <textarea name="message" cols="50" rows="5" value={contactInfo.message} onChange={handleContact} required/>
                 <div className='form-buttons'>
-                  <a href="" className="modal-send">Submit</a>
+                  <a className="modal-send" type="submit" onClick={handleSubmit}>Submit</a>
                   <a href="" onClick={(e) => {
                     e.preventDefault();
                     handleModal()

@@ -31,8 +31,8 @@ function Skills() {
                             manager for software development students of the program. I previously operated my own photography business
                             working in product marketing, real estate and fine art landscape photography.</p>
                         <div className="socials">
-                            <img src="https://image.flaticon.com/icons/svg/733/733553.svg"/>
-                            <img src="https://image.flaticon.com/icons/svg/2111/2111463.svg"/>
+                            <a href="https://github.com/alexvision26" target="_blank"><img src="https://image.flaticon.com/icons/svg/733/733553.svg"/></a>
+                            <a href="https://www.instagram.com/alex.vision/" target="_blank"><img src="https://image.flaticon.com/icons/svg/2111/2111463.svg"/></a>
                         </div>
                     </div>
                 </div>
