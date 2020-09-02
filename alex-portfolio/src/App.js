@@ -119,7 +119,7 @@ function App() {
         <header className={navState}>
             <div className='nav-content'>
               <div className='logo'>
-                <h2>Made By Alex</h2>
+                <h2>Alex Miller</h2>
               </div>
               <label className="hamburger" htmlFor="toggle">&#9776;</label>
                 <input type="checkbox" id="toggle"></input>
@@ -137,7 +137,7 @@ function App() {
           <Hero handleModal={handleModal} jump={jump}/>
         </div>
 
-        <div id="skills">
+        <div id="about">
           <Skills/>
         </div>
 
@@ -170,6 +170,7 @@ function App() {
             <h3>Alex Miller | Full Stack Software Developer | 2020</h3>
             <a href="#">> Home</a>
             <a href="#projects">> Portfolio</a>
+            <a href="#about">> About</a>
             <a onClick={handleModal}>> Contact</a>
           </div>
       </div>
