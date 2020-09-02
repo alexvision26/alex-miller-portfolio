@@ -15,9 +15,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-devUrl = process.env.BACKEND;
-
-server.post(`${devUrl}/api/contact`, (req, res) => {
+server.post(`/api/contact`, (req, res) => {
 
 
     const htmlEmail = `
@@ -56,11 +54,11 @@ server.post(`${devUrl}/api/contact`, (req, res) => {
         })
 })
 
-server.get(`${devUrl}/`, (req, res) => {
+server.get(`/`, (req, res) => {
     res.status(200).json({ api: 'running'})
 })
 
-server.get(`${devUrl}/api/projects`, (req, res) => {
+server.get(`/api/projects`, (req, res) => {
     // res.status(200).json({ projects: 'working'})
     db('projects').then(projects => {
         res.status(200).json(projects)

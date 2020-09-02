@@ -15,7 +15,7 @@ function Hero(props) {
 
                     <div className='intro-buttons'>
                     <a href="#projects" className="intro-button">Portfolio</a>
-                    <a className="intro-button" onClick={props.handleModal}>Contact</a>
+                    <a className="intro-button" href="mailto:alexmillerprojects@gmail.com">Contact</a>
                 </div>
                 </div>
                 <AnchorLink href='#about'>
