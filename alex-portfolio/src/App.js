@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import Hero from './components/hero';
 import Skills from './components/skills';
-import { Helmet } from 'react-helmet';
 
 function useOnScreen(options) {
   const ref = React.useRef();
@@ -112,9 +111,6 @@ function App() {
 
   return (
     <div className={pageState}>
-      <Helmet>
-        <title>Made by Alex</title>
-      </Helmet>
       <div className='hero'>
         <header className={navState}>
             <div className='nav-content'>
