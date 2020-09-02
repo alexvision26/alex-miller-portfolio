@@ -5,7 +5,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
-
 const server = express();
 
 const db = require('./data/dbConfig.js');
@@ -16,7 +15,9 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-server.post('/api/contact', (req, res) => {
+devUrl = process.env.BACKEND;
+
+server.post(`${devUrl}/api/contact`, (req, res) => {
 
 
     const htmlEmail = `
@@ -55,11 +56,11 @@ server.post('/api/contact', (req, res) => {
         })
 })
 
-server.get('/', (req, res) => {
+server.get(`${devUrl}/`, (req, res) => {
     res.status(200).json({ api: 'running'})
 })
 
-server.get('/api/projects', (req, res) => {
+server.get(`${devUrl}/api/projects`, (req, res) => {
     // res.status(200).json({ projects: 'working'})
     db('projects').then(projects => {
         res.status(200).json(projects)
