@@ -45,7 +45,7 @@ function App() {
   const [ref, visible] = useOnScreen({rootMargin: '50px'})
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/projects').then(res => {
+    axios.get(`https://limitless-sea-30057.herokuapp.com/api/projects`).then(res => {
       setProjects(res.data)
     }).catch(err => {
       console.log(err)
@@ -104,7 +104,7 @@ function App() {
 
   const navState = visible ? "navbar hidden" : "navbar";
   const pageState = loaded ? "App" : "App hidden";
-  const returnArrow = visible ? "none" : "block";
+  // const returnArrow = visible ? "none" : "block";
 
   var showModal = isModal ? "flex" : "none";
 
@@ -123,14 +123,14 @@ function App() {
                     <a href='#'>Home</a>
                     <a href='#projects'>Portfolio</a>
                     <a href='#about'>About</a>
-                    <a onClick={handleModal}>Contact</a>
+                    <a href="mailto:alexmillerprojects@gmail.com">Contact</a>
               </div>
             </div>
         </header>
         
 
         <div ref={ref}>
-          <Hero handleModal={handleModal} jump={jump}/>
+          <Hero jump={jump}/>
         </div>
 
         <div id="about">
@@ -147,6 +147,8 @@ function App() {
             <div className='port-desc'>
               <h3>{e.proj_name}</h3>
               <p>{e.desc}</p>
+              <br/>
+              <p><span className="tech-stack">Tech Stack:</span> {e.stack}</p>
               <div className='proj-buttons'>
                 <button onClick={() => viewPage(e.deploy)}>App</button>
                 {e.repo ? <button onClick={() => viewPage(e.repo)}>Code</button> : <></>}
@@ -159,7 +161,7 @@ function App() {
           </div>
           <div className='contact-sec'>
             <h2>Ready to work?</h2>
-            <button className='cta-button' onClick={handleModal}>Let's talk!</button>
+            <a className='cta-button' href="mailto:alexmillerprojects@gmail.com">Let's talk!</a>
           </div>
 
           <div className='footer-sec'>
@@ -167,11 +169,12 @@ function App() {
             <a href="#">> Home</a>
             <a href="#projects">> Portfolio</a>
             <a href="#about">> About</a>
-            <a onClick={handleModal}>> Contact</a>
+            <a href="mailto:alexmillerprojects@gmail.com">> Contact</a>
+            {/* <a onClick={handleModal}>> Contact</a> */}
           </div>
       </div>
 
-      <div className='contact-modal' style={{display: showModal}}>
+      {/* <div className='contact-modal' style={{display: showModal}}>
         <h1>Contact Alex Miller</h1>
           <div className="modal-content">
             <div className='close' onClick={handleModal}>+</div>
@@ -196,7 +199,7 @@ function App() {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <a href="#" className={visible ? "return hidden" : "return"}>
           <img src="https://image.flaticon.com/icons/svg/992/992703.svg"/>

@@ -29,6 +29,7 @@ function Skills() {
                         <p>Hello! I am a software developer who is passionate about creating applications, learning new technologies and education. I have gained experience using HTML, CSS, JavaScript, React, Redux, Node, Express, Knex, Python, MySQL and more through creating various applications for companies and other collaborative projects while studying full-stack web development at Lambda School.
                         </p>
                         <p>I am currently based in Oregon but open to remote work and relocation.</p>
+                        
                         <div className="socials">
                             <a href="https://github.com/alexvision26" target="_blank"><img src="https://image.flaticon.com/icons/svg/733/733553.svg"/></a>
                             <a href="https://www.instagram.com/alex.vision/" target="_blank"><img src="https://image.flaticon.com/icons/svg/2111/2111463.svg"/></a>
@@ -36,7 +37,17 @@ function Skills() {
                     </div>
                 </div>
 
+                <div className="skills-list">
+
+                <hr style={{width:"75%", margin:"4% auto"}}/>
+                <h4>Skills</h4>
+                <p>JavaScript (ES6) | React.js | React Hooks | React Testing Library | Git | Context API | Redux.js | HTML5 | CSS | LESS | SASS | REST APIs | Node.js | SQL | SQlite | MySQL | Knex | Jest | Python | Vercel | Heroku | Python | Styled Components </p>
+                {/* <hr style={{width:"25%", margin:"4% auto"}}/> */}
+
+                </div>
+
                 <div className='skills-section'>
+                    
                     <div className="skills-blocks">
 
                         <div className='block' onMouseEnter={handleHover} onMouseLeave={handleLeave}>

@@ -9,8 +9,10 @@ exports.up = function(knex) {
       tbl.string('proj_img', 2048)
       .notNullable()
 
-      tbl.string('desc', 1024)
+      tbl.string('desc', 2048)
       .notNullable()
+
+      tbl.string('stack', 1024)
 
       tbl.date('date')
 
