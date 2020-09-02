@@ -15,45 +15,6 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-server.post(`/api/contact`, (req, res) => {
-
-
-    const htmlEmail = `
-        <h3>Contact Details</h3>
-        <ul>
-            <li>From: ${req.body.email}</li>
-            <li>Subject: ${req.body.subject}</li>
-        </ul>
-        <h3>Message</h3>
-        <p>${req.body.message}</p>
-        `
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-                user: process.env.EMAIL,
-                pass: process.env.PASS
-            }
-        });
-
-    let mailOptions = {
-        from: 'hello@alexmiller.dev',
-        to: "alexvisionllc@gmail.com",
-        replyTo: req.body.email,
-        subject: req.body.subject,
-        text: req.body.message,
-        html: htmlEmail
-    }
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            return console.log(err)
-        }
-
-        console.log('Email sent!')
-        })
-})
-
 server.get(`/`, (req, res) => {
     res.status(200).json({ api: 'running'})
 })

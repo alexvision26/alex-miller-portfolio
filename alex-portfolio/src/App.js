@@ -45,7 +45,7 @@ function App() {
   const [ref, visible] = useOnScreen({rootMargin: '50px'})
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/projects').then(res => {
+    axios.get(`https://limitless-sea-30057.herokuapp.com/api/projects`).then(res => {
       setProjects(res.data)
     }).catch(err => {
       console.log(err)
@@ -124,7 +124,6 @@ function App() {
                     <a href='#projects'>Portfolio</a>
                     <a href='#about'>About</a>
                     <a href="mailto:alexmillerprojects@gmail.com">Contact</a>
-                    {/* <a onClick={handleModal}>Contact</a> */}
               </div>
             </div>
         </header>
@@ -148,6 +147,8 @@ function App() {
             <div className='port-desc'>
               <h3>{e.proj_name}</h3>
               <p>{e.desc}</p>
+              <br/>
+              <p><span className="tech-stack">Tech Stack:</span> {e.stack}</p>
               <div className='proj-buttons'>
                 <button onClick={() => viewPage(e.deploy)}>App</button>
                 {e.repo ? <button onClick={() => viewPage(e.repo)}>Code</button> : <></>}
