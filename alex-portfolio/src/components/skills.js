@@ -32,7 +32,7 @@ function Skills() {
                         
                         <div className="socials">
                             <a href="https://github.com/alexvision26" target="_blank"><img src="https://image.flaticon.com/icons/svg/733/733553.svg"/></a>
-                            <a href="https://www.instagram.com/alex.vision/" target="_blank"><img src="https://image.flaticon.com/icons/svg/2111/2111463.svg"/></a>
+                            <a href="https://www.linkedin.com/in/alexvision/" target="_blank"><img src="https://image.flaticon.com/icons/svg/174/174857.svg"/></a>
                         </div>
                     </div>
                 </div>
