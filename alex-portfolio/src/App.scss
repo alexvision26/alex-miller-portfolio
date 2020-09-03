@@ -81,6 +81,13 @@ p {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.loader {
+  margin: 0 auto;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
 .tech-stack {
   color: #4dbd3f;
 }

@@ -5,6 +5,8 @@ import axios from 'axios';
 import Hero from './components/hero';
 import Skills from './components/skills';
 
+import FadeLoader from "react-spinners/FadeLoader";
+
 function useOnScreen(options) {
   const ref = React.useRef();
   const [visible, setVisible] = useState(false)
@@ -36,16 +38,14 @@ function App() {
   const [loaded, setLoaded] = useState(false)
   const [isModal, setIsModal] = useState(false)
 
-  const [contactInfo, setContactInfo] = useState({
-    email: "",
-    subject: "",
-    message: ""
-  })
+  const [projLoad, setProjLoad] = useState(false)
 
   const [ref, visible] = useOnScreen({rootMargin: '50px'})
 
   useEffect(() => {
+    setProjLoad(true)
     axios.get(`https://limitless-sea-30057.herokuapp.com/api/projects`).then(res => {
+      setProjLoad(false)
       setProjects(res.data)
     }).catch(err => {
       console.log(err)
@@ -105,7 +105,15 @@ function App() {
       <h2 id='projects' className='proj-sec'>Recent Projects</h2>
         <div className='container'>
 
-        {projects.map(e => {
+        {projLoad ? 
+        <div className="loader">
+        <FadeLoader
+          size={1050}
+          color={"#4dbd3f"}
+        />
+        </div> : 
+
+        projects.map(e => {
           return (
           <div className='port-item'>
             <img src={e.proj_img}/>
@@ -122,6 +130,7 @@ function App() {
           </div>
           )
         })}
+
 
           </div>
           <div className='contact-sec'>
