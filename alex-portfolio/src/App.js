@@ -57,37 +57,6 @@ function App() {
 
   }, [])
 
-  const handleContact = (e) => {
-    setContactInfo({
-      ...contactInfo,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    handleModal();
-
-    setContactInfo({
-      email: "",
-      subject: "",
-      message: ""
-    })
-
-    setTimeout("alert('Message sent successfully!');", 1);
-
-    const { email, subject, message } = contactInfo
-    
-    const form = await axios.post('http://localhost:5000/api/contact', {
-      email,
-      subject,
-      message
-    })
-
-    
-  }
-
   const viewPage = (link) => {
     window.open(link, '_blank')
   }
@@ -104,10 +73,6 @@ function App() {
 
   const navState = visible ? "navbar hidden" : "navbar";
   const pageState = loaded ? "App" : "App hidden";
-  // const returnArrow = visible ? "none" : "block";
-
-  var showModal = isModal ? "flex" : "none";
-
 
   return (
     <div className={pageState}>
@@ -173,33 +138,6 @@ function App() {
             {/* <a onClick={handleModal}>> Contact</a> */}
           </div>
       </div>
-
-      {/* <div className='contact-modal' style={{display: showModal}}>
-        <h1>Contact Alex Miller</h1>
-          <div className="modal-content">
-            <div className='close' onClick={handleModal}>+</div>
-            <div className="form-content">
-              <img src="https://avatars3.githubusercontent.com/u/57777545?s=400&v=4" width="200px" height="200px" alt=""/>
-
-              <form className='ct-form' action="" method="">
-                <label>To Alex Miller:</label><br/>
-                <label>Your Email Address</label>
-                <input className="contact-box" name="email" type="email" value={contactInfo.email} onChange={handleContact} required/>
-                <label>Subject</label>
-                <input className="contact-box" type='text' name="subject" value={contactInfo.subject} onChange={handleContact} required/>
-                <label>Message</label>
-                <textarea name="message" cols="50" rows="5" value={contactInfo.message} onChange={handleContact} required/>
-                <div className='form-buttons'>
-                  <a className="modal-send" type="submit" onClick={handleSubmit}>Submit</a>
-                  <a href="" onClick={(e) => {
-                    e.preventDefault();
-                    handleModal()
-                    }} className="modal-cancel">Cancel</a>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> */}
 
         <a href="#" className={visible ? "return hidden" : "return"}>
           <img src="https://image.flaticon.com/icons/svg/992/992703.svg"/>
