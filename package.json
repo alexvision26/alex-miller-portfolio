@@ -17,7 +17,7 @@
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
     "react-helmet": "^6.1.0",
-    "sqlite3": "^5.0.0",
+    "sqlite3": "^5.0.3",
     "supertest": "^4.0.2",
     "xoauth2": "^1.2.0"
   },
